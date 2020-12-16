@@ -28,33 +28,33 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // logo 
-        $logo = Logo::first();
-        if(isset($logo)){
+        // $logo = Logo::first();
+        // if(isset($logo)){
             
-            // views 
-            // logo
-            view::share('logo', $logo);
-        }
+        //     // views 
+        //     // logo
+        //     view::share('logo', $logo);
+        // }
 
 
 
 
 
     // site default
-        $Sitedefault = Sitedefault::first();
-       if(isset($Sitedefault)){
-        $site_title   = $Sitedefault->site_title;
-        $site_about   = $Sitedefault->site_about;
-        $businessmail = $Sitedefault->businessmail;
-        $address      = $Sitedefault->address;
-        $phone        = $Sitedefault->phone;
-        // site default viwes
-        view::share('site_title', $site_title);
-        view::share('site_about', $site_about);
-        view::share('businessmail', $businessmail);
-        view::share('address', $address);
-        view::share('phone', $phone);
-       }
+    //     $Sitedefault = Sitedefault::first();
+    //    if(isset($Sitedefault)){
+    //     $site_title   = $Sitedefault->site_title;
+    //     $site_about   = $Sitedefault->site_about;
+    //     $businessmail = $Sitedefault->businessmail;
+    //     $address      = $Sitedefault->address;
+    //     $phone        = $Sitedefault->phone;
+    //     // site default viwes
+    //     view::share('site_title', $site_title);
+    //     view::share('site_about', $site_about);
+    //     view::share('businessmail', $businessmail);
+    //     view::share('address', $address);
+    //     view::share('phone', $phone);
+    //    }
 
 
       
@@ -62,13 +62,13 @@ class AppServiceProvider extends ServiceProvider
 
         // socils links 
 
-        $social =  Social::first();
-       if(isset($social)){
-        view::share('facebook', $social->facebook);
-        view::share('twitter', $social->twitter);
-        view::share('linkdin', $social->linkdin);
-        view::share('github', $social->github);
-       }
+    //     $social =  Social::first();
+    //    if(isset($social)){
+    //     view::share('facebook', $social->facebook);
+    //     view::share('twitter', $social->twitter);
+    //     view::share('linkdin', $social->linkdin);
+    //     view::share('github', $social->github);
+    //    }
 
     
     }

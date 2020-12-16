@@ -4,18 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ExtrapagesController;
 use App\Http\Livewire\Slider;
-use App\Http\Livewire\Post;
+// use App\Http\Livewire\Post;
+use App\Http\Controllers\backend\DashboardController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', [HomeController::class, 'index'])->name('website.index');
 Route::get('/resume-download/{file}', [HomeController::class, 'downloadResume'])->name('downloadResume');
@@ -47,5 +38,5 @@ route::get('/dashboard', function ()
 // admin panel route
 
 
-Route::get('/admin/slider', Slider::class);
-Route::get('/admin/post', Post::class);
+Route::get('/admin/slider', [DashboardController::class, 'slider'])->name('admin.slider');
+// Route::get('/admin/post', Post::class);

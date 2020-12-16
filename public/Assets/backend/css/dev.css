@@ -1,0 +1,7 @@
+
+#larapaginate svg{
+    height: 18px;
+}
+#larapaginate nav .flex .justify-between .flex-1 {
+display: none !important;
+}

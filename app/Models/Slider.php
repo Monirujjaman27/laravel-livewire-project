@@ -16,7 +16,10 @@ class Slider extends Model
     protected $fillable = [
         'title',
         'subtitle',
+        'counterText',
         'counter',
-        '   ',
+        'sliderbg',
+        'buttonName',
+        'buttonUrl',
     ];
 }

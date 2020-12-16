@@ -25,28 +25,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- toastr css  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-    {{-- data table --}}
-
-
+    <!-- data table -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ asset('public/Assets/backend') }}/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ asset('public/Assets/backend') }}/css/dev.css">
     @livewireStyles
-
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-
         <!-- navebar -->
-        @livewire('livewire.inc.nav')
+        @include('livewire.inc.nav')
         <!-- sidebar -->
-        @livewire('livewire.inc.sidebar')
+        @include('livewire.inc.sidebar')
         <!-- page content  -->
         <div class="content-wrapper">
             @yield('content')
         </div>
-
         <!-- footer  -->
     </div>
     <!-- ./wrapper -->
@@ -65,13 +61,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- summernote -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
     <script>
         // session 
-        // @if(Session::get('success'))
+        // if(Session::get('success'))
         // toastr.success("{!! Session::get('success') !!}");
-        // @endif
+        // endif
     </script>
-
     <script>
         // tooltip
         $(function() {
@@ -93,6 +89,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </script>
 
     @livewireScripts
+    <script>
+        window.addEventListener('closeModal', event => {
+            $('#modalForm').modal('hide');
+        })
+        //  tostermessage  
+        window.addEventListener('successalert', event => {
+            toastr.success(event.detail.success);
+        });
+        // open modal for edit 
+        window.addEventListener('openmodal', event => {
+            $('#modalForm').modal('show');
+        })
+    </script>
 </body>
 
 </html>

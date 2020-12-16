@@ -1,13 +1,11 @@
 @extends('Layouts.app')
-
-
+@section('title')
+{{'Sliders'}}
+@endsection
+<!-- content  -->
 @section('content')
+<!-- include slider -->
 
-
-<div>
-    <!-- @livewire('slider') -->
-</div>
-<!-- /.content -->
-<!-- /.content-wrapper -->
+@livewire('slider.slider')
 
 @endsection
